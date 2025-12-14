@@ -63,7 +63,7 @@ def lfsr_stream(seed: int, width: int, taps: List[int], nbytes: int) -> List[int
     return out
 
 
-# Meet-in-the-middle attack
+# Meet in the middle attack
 
 def mitm_recover_seeds(keystream_header: List[int]) -> Tuple[int, int]:
 
@@ -87,7 +87,7 @@ def mitm_recover_seeds(keystream_header: List[int]) -> Tuple[int, int]:
 
     print(f"Stored {len(seq_to_seed2)} unique sequences for LFSR2")
 
-    # For each LFSR1 seed comapre to LSFR2 and look it up
+    # For each LFSR1 seed comapre to LSFR2 and look it up in our dict
     print(f"Iterating over LFSR1 seeds (0.{max_seed1 - 1})")
     for seed1 in range(max_seed1):
         seq1 = lfsr_stream(seed1, WIDTH_REG1, taps1, n)
