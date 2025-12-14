@@ -137,7 +137,7 @@ def main():
     keystream_header = [c ^ p for c, p in zip(header_ct, PNG_HEADER)]
     print("Keystream header bytes:", keystream_header)
 
-    # Meet-in-the-middle to recover both LFSR seeds
+    # Meet in the middle to recover both LFSR seeds
     seed1, seed2 = mitm_recover_seeds(keystream_header)
     print(f" LFSR1={seed1}, LFSR2={seed2}")
 
